@@ -21,19 +21,25 @@ use strict;
 
 use Test::More tests => 4;
 
+my $USE_XS = $ENV{'USE_TEXT_CSV_XS'};
+
 use Text::CSV_PP;
 use Data::Dumper qw(Dumper);
+
+if ($USE_XS)
+{
+    require Text::CSV_XS;
+}
 
 {
     my $csv_text = <<'EOF';
 "DIVISION CODE", "DIVISION DESCRIPTION", "CUSTOMER CODE", "CUSTOMER NAME", "SHORT NAME", "ADDRESS LINE 1", "ADDRESS LINE 2", "ADDRESS LINE 3", "TOWN", "COUNTY", "POST CODE", "COUNTRY", "GRID REF", "TELEPHONE", "AGENT CODE", "YEAR TO DATE SALES"
-"1", "UK", "AA147", "Aardvark Music", "AARDVA", "Compton House", "9 Totnes Road", "", "PAIGNTON", "Devon", "TQ4 5JX", "", "", "01803 664481", "", 0.00
-"2", "EC", "CA175", "La Manticora, S.L. (Camden)", "LA MAN", "C/ Pallers 85-91 2n4a", "", "", "08018 BARCELONA", "", "", "Spain", "", "0034 93 551 0768", "", 0.00
+"1", "UK", "Lambda", "Gambda Noo", "Foo", "Quad", "Rectum", "", "Eingoon", "Land", "Simplex", "", "", "099 999", "", 0.00
 EOF
 
     open my $IF, "<", \$csv_text;
 
-    my $csv = Text::CSV_PP->new({
+    my $csv = ($USE_XS ? "Text::CSV_XS" : "Text::CSV_PP")->new({
             allow_whitespace    => 1,
             allow_loose_escapes => 1,
         }) or die "Cannot use CSV: ".Text::CSV->error_diag();
@@ -44,7 +50,7 @@ EOF
         my $first_line = $csv->getline_hr($IF);
 
         # TEST
-        is ($first_line->{'POST CODE'}, 'TQ4 5JX',
+        is ($first_line->{'POST CODE'}, 'Simplex',
             "First line POST CODE"
         );
 
@@ -59,7 +65,7 @@ EOF
         );
 
         # TEST
-        is ($first_line->{'TELEPHONE'}, '01803 664481',
+        is ($first_line->{'TELEPHONE'}, '099 999',
             "First line TELEPHONE",
         );
     }
