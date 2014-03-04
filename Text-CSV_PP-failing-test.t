@@ -1,9 +1,23 @@
 #!/usr/bin/perl
 
+=head1 DESCRIPTION
+
+This is a test program that succeeds with Text::CSV_PP and fails with
+Text::CSV_XS. The Text::CSV_XS behaviour is the correct one.
+
+=head1 CREDITS
+
+The sample data and a test program were contributed by blue_sky on Freenode’s
+#perl channel as part of a problem report with Text::CSV_PP .
+
+Converted into a test program by Shlomi Fish ( L<http://www.shlomifish.org/> ).
+
+=cut
+
 use warnings;
 use strict;
 
-use Test::More tests => 1;
+use Test::More tests => 4;
 
 use Text::CSV_PP;
 use Data::Dumper qw(Dumper);
