@@ -1,0 +1,3 @@
+"DIVISION CODE", "DIVISION DESCRIPTION", "CUSTOMER CODE", "CUSTOMER NAME", "SHORT NAME", "ADDRESS LINE 1", "ADDRESS LINE 2", "ADDRESS LINE 3", "TOWN", "COUNTY", "POST CODE", "COUNTRY", "GRID REF", "TELEPHONE", "AGENT CODE", "YEAR TO DATE SALES"
+"1", "UK", "AA147", "Aardvark Music", "AARDVA", "Compton House", "9 Totnes Road", "", "PAIGNTON", "Devon", "TQ4 5JX", "", "", "01803 664481", "", 0.00
+"2", "EC", "CA175", "La Manticora, S.L. (Camden)", "LA MAN", "C/ Pallers 85-91 2n4a", "", "", "08018 BARCELONA", "", "", "Spain", "", "0034 93 551 0768", "", 0.00
