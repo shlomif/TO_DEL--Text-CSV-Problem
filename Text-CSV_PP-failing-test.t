@@ -5,10 +5,13 @@
 This is a test program that succeeds with Text::CSV_PP and fails with
 Text::CSV_XS. The Text::CSV_XS behaviour is the correct one.
 
-=head1 CREDITS
+=head1 CREDITS AND LICENSE
 
-The sample data and a test program were contributed by blue_sky on Freenode’s
-#perl channel as part of a problem report with Text::CSV_PP .
+The sample data (now anonymised) and a test program were contributed by
+blue_sky on Freenode’s
+#perl channel as part of a problem report with Text::CSV_PP based on the
+Text::CSV documentation. License is open source and compatible with the license
+of Text::CSV.
 
 Converted into a test program by Shlomi Fish ( L<http://www.shlomifish.org/> )
 , while disclaiming all explicit or implicit copyright ownership on the
