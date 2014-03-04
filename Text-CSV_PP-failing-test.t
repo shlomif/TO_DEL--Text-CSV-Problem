@@ -10,7 +10,9 @@ Text::CSV_XS. The Text::CSV_XS behaviour is the correct one.
 The sample data and a test program were contributed by blue_sky on Freenode’s
 #perl channel as part of a problem report with Text::CSV_PP .
 
-Converted into a test program by Shlomi Fish ( L<http://www.shlomifish.org/> ).
+Converted into a test program by Shlomi Fish ( L<http://www.shlomifish.org/> )
+, while disclaiming all explicit or implicit copyright ownership on the
+modifications.
 
 =cut
 
